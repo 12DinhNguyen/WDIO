@@ -1,90 +1,126 @@
 describe('The Internet home page', () => {
-    //TC01 — Kiểm tra tiêu đề trang chủ
-    it('should show the correct browser title', async () => {
-        await browser.url('https://the-internet.herokuapp.com');
-        const title = await browser.getTitle();
-        console.log('Page title is:', title);
+    // //TC01 — Kiểm tra tiêu đề trang chủ
+    // it('should show the correct browser title', async () => {
+    //     await browser.url('https://the-internet.herokuapp.com');
+    //     const title = await browser.getTitle();
+    //     console.log('Page title is:', title);
 
-        expect(title).toBe('The Internet');
-    });
+    //     expect(title).toBe('The Internet');
+    // });
 
-    //TC02 — Đăng nhập thành công
-    it('should show a success message', async () => {
-        await browser.url('https://the-internet.herokuapp.com/login');
+    // //TC02 — Đăng nhập thành công
+    // it('should show a success message', async () => {
+    //     await browser.url('https://the-internet.herokuapp.com/login');
 
-        await $('#username').setValue('tomsmith');
-        await $('#password').setValue('SuperSecretPassword!');
-        await $('button[type="submit"]').click();
+    //     await $('#username').setValue('tomsmith');
+    //     await $('#password').setValue('SuperSecretPassword!');
+    //     await $('button[type="submit"]').click();
 
-        await browser.pause(1000);
+    //     await browser.pause(1000);
 
-        const message = await $('#flash').getText();
+    //     const message = await $('#flash').getText();
 
-        expect(message).toContain('You logged into a secure area!');
-    });
+    //     expect(message).toContain('You logged into a secure area!');
+    // });
 
-    //TC03 — Đăng nhập thất bại
-    it('should show an error message', async () => {
-        await browser.url('https://the-internet.herokuapp.com/login');
+    // //TC03 — Đăng nhập thất bại
+    // it('should show an error message', async () => {
+    //     await browser.url('https://the-internet.herokuapp.com/login');
 
-        await $('#username').setValue('wronguser');
-        await $('#password').setValue('wrongpassword');
-        await $('button[type="submit"]').click();
+    //     await $('#username').setValue('wronguser');
+    //     await $('#password').setValue('wrongpassword');
+    //     await $('button[type="submit"]').click();
 
-        await browser.pause(1000);
-        const message = await $('#flash').getText();
+    //     await browser.pause(1000);
+    //     const message = await $('#flash').getText();
 
-        expect(message).toContain('Your username is invalid!');
-    });
+    //     expect(message).toContain('Your username is invalid!');
+    // });
 
-    //TC04 — Đếm và click Checkbox
-    it('should count checkboxes', async () => {
-        await browser.url('https://the-internet.herokuapp.com/checkboxes');
+    // //TC04 — Đếm và click Checkbox
+    // it('should count checkboxes', async () => {
+    //     await browser.url('https://the-internet.herokuapp.com/checkboxes');
 
-        const checkboxes = await $$('input[type="checkbox"]');
-        expect(checkboxes.length).toBe(2);
-        const firstCheckbox = await $('form input[type="checkbox"]:first-child');
-        await firstCheckbox.click();
+    //     const checkboxes = await $$('input[type="checkbox"]');
+    //     expect(checkboxes.length).toBe(2);
+    //     const firstCheckbox = await $('form input[type="checkbox"]:first-child');
+    //     await firstCheckbox.click();
 
-        const checkboxType = await checkboxes[0].getAttribute('type');
-        expect(checkboxType).toBe('checkbox');
-    });
+    //     const checkboxType = await checkboxes[0].getAttribute('type');
+    //     expect(checkboxType).toBe('checkbox');
+    // });
 
-    it('should select Option 2 and verify its text', async () => {
-        await browser.url('https://the-internet.herokuapp.com/dropdown');
-        const optionTwo = await $('#dropdown option[value="2"]');
-        await optionTwo.click();
-        await browser.pause(1000);
+    // it('should select Option 2 and verify its text', async () => {
+    //     await browser.url('https://the-internet.herokuapp.com/dropdown');
+    //     const optionTwo = await $('#dropdown option[value="2"]');
+    //     await optionTwo.click();
+    //     await browser.pause(1000);
 
-        const optionText = await optionTwo.getText();
-        expect(optionText).toBe('Option 2');
-    });
-
-
-    it('add three delete buttons, remove one, and verify', async () => {
-        await browser.url('https://the-internet.herokuapp.com/add_remove_elements/');
-
-        const addButton = await $('button=Add Element');
-        await addButton.click();
-        await addButton.click();
-        await addButton.click();
-
-        let deleteButtons = await $$('button=Delete');
-        expect(deleteButtons.length).toBe(3);
-        await deleteButtons[0].click();
-        deleteButtons = await $$('button=Delete');
-        expect(deleteButtons.length).toBe(2);
-    });
+    //     const optionText = await optionTwo.getText();
+    //     expect(optionText).toBe('Option 2');
+    // });
 
 
-    it.only('replace the value with setValue and append with addValue', async () => {
-        await browser.url('https://the-internet.herokuapp.com/inputs');
-        const numberInput = await $('input[type="number"]');
+    // it('add three delete buttons, remove one, and verify', async () => {
+    //     await browser.url('https://the-internet.herokuapp.com/add_remove_elements/');
 
-        await numberInput.setValue('123');
-        await numberInput.addValue('456');
+    //     const addButton = await $('button=Add Element');
+    //     await addButton.click();
+    //     await addButton.click();
+    //     await addButton.click();
 
-        const inputValue = await numberInput.getAttribute('value');
-        expect(inputValue).toBe('123456');
-    });
-});
+    //     let deleteButtons = await $$('button=Delete');
+    //     expect(deleteButtons.length).toBe(3);
+    //     await deleteButtons[0].click();
+    //     deleteButtons = await $$('button=Delete');
+    //     expect(deleteButtons.length).toBe(2);
+    // });
+
+
+    // it('replace the value with setValue and append with addValue', async () => {
+    //     await browser.url('https://the-internet.herokuapp.com/inputs');
+    //     const numberInput = await $('input[type="number"]');
+
+    //     await numberInput.setValue('123');
+    //     await numberInput.addValue('456');
+
+    //     const inputValue = await numberInput.getAttribute('value');
+    //     expect(inputValue).toBe('123456');
+    // });
+
+
+
+})
+// describe('Assign Leave textarea', () => {
+//   it('replace textarea value', async () => {
+//     await browser.url('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+
+//     await $('input[name="username"]').setValue('Admin');
+//     await $('input[name="password"]').setValue('admin123');
+//     await $('button[type="submit"]').click();
+
+//     await browser.url('https://opensource-demo.orangehrmlive.com/web/index.php/leave/assignLeave');
+
+//     const textArea = await $('textarea.oxd-textarea--active');
+
+//     await textArea.waitForDisplayed();
+//     await textArea.setValue('Nội dung cũ');
+
+//     await replaceValue(textArea, 'Nội dung mới');
+
+//     const content = await textArea.getValue();
+//     await expect(content).toEqual('Nội dung mới');
+
+//     await browser.pause(2000);
+//   });
+// });
+
+// async function replaceValue(element, value) {
+//   await element.click();
+
+//   const modifier = process.platform === 'darwin' ? 'Command' : 'Control';
+
+//   await browser.keys([modifier, 'a']);
+//   await browser.keys('Backspace');
+//   await element.addValue(value);
+// }

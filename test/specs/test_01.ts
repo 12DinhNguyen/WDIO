@@ -1,12 +1,12 @@
-describe('My Login application', () => {
+// describe('My Login application', () => {
 
-    it('test 01', async () => {
+//     it('test 01', async () => {
 
-        await browser.url('https://the-internet.herokuapp.com/login')
-        const eTitle = browser.getTitle()
-        console.log(eTitle)
+//         await browser.url('https://the-internet.herokuapp.com/login')
+//         const eTitle = browser.getTitle()
+//         console.log(eTitle)
 
-        const eInput
-    })
+//         const eInput
+//     })
 
-})
+// })
