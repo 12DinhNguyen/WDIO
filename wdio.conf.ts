@@ -26,7 +26,9 @@ export const config: WebdriverIO.Config = {
     specs: [
         // './test/specs/**/actionnow_01.ts'
         // './test/specs/**/chapter_06.ts'
-        './test/specs/**/*chapter_07.ts'
+        // './test/specs/**/*chapter_07.ts'
+        // './test/specs/**/*chap_08.ts'
+        './test/specs/**/*chap_09.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -55,7 +57,9 @@ export const config: WebdriverIO.Config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        unhandledPromptBehavior: 'ignore',
+        'wdio:enforceWebDriverClassic': true,
     }],
 
     //
