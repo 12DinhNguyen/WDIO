@@ -24,11 +24,8 @@ export const config: WebdriverIO.Config = {
     // the config file unless it's absolute.
     //
     specs: [
-        // './test/specs/**/actionnow_01.ts'
-        // './test/specs/**/chapter_06.ts'
-        // './test/specs/**/*chapter_07.ts'
-        // './test/specs/**/*chap_08.ts'
-        './test/specs/**/*chap_09.ts'
+        './test/specs/**/*dialog.ts',
+        './test/specs/**/*chap_10.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -58,8 +55,6 @@ export const config: WebdriverIO.Config = {
     //
     capabilities: [{
         browserName: 'chrome',
-        unhandledPromptBehavior: 'ignore',
-        'wdio:enforceWebDriverClassic': true,
     }],
 
     //
