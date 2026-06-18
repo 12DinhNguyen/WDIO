@@ -2,22 +2,15 @@ describe('horizontal_slider', () => {
     const SLIDER_URL = 'https://the-internet.herokuapp.com/horizontal_slider';
     const eSlider = () => $('input[type="range"]');
 
-    it('di chuyển slider tới giá trị 1', async () => {
+    it('di chuyển slider tới các giá trị 1, 3, 5', async () => {
         await browser.url(SLIDER_URL);
-        const value = await setSliderTo(1);
-        expect(value).toBe('1');
-    });
+        expect(await setSliderTo(5)).toBe('5');
 
-    it('di chuyển slider tới giá trị 3', async () => {
         await browser.url(SLIDER_URL);
-        const value = await setSliderTo(3);
-        expect(value).toBe('3');
-    });
+        expect(await setSliderTo(1)).toBe('1');
 
-    it('di chuyển slider tới giá trị 5', async () => {
         await browser.url(SLIDER_URL);
-        const value = await setSliderTo(5);
-        expect(value).toBe('5');
+        expect(await setSliderTo(3)).toBe('3');
     });
 
     async function setSliderTo(targetValue: number) {
@@ -28,6 +21,7 @@ describe('horizontal_slider', () => {
         for (let i = 0; i < steps; i++) {
             await browser.keys('ArrowRight');
         }
-        return eSlider().getValue();
+        return await eSlider().getValue();
+
     }
 });
