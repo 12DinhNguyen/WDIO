@@ -24,8 +24,10 @@ export const config: WebdriverIO.Config = {
     // the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*dialog.ts',
-        './test/specs/**/*chap_10.ts'
+        './test/specs/**/*chap_12.ts',
+        // './test/specs/**/*chap_11.ts',
+        // './test/specs/**/*dialog.ts',
+        // './test/specs/**/*chap_10.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -91,7 +93,7 @@ export const config: WebdriverIO.Config = {
     // baseUrl: 'http://localhost:8080',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -133,7 +135,7 @@ export const config: WebdriverIO.Config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 120000
     },
 
     //
