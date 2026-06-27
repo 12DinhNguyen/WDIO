@@ -24,8 +24,10 @@ export const config: WebdriverIO.Config = {
     // the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*chap_12.ts',
-        './test/specs/**/*chapNewwindown.ts',
+        './test/specs/**/*chap15.ts',
+        // './test/specs/**/*chap_upload.ts',
+        // './test/specs/**/*chap_12.ts',
+        // './test/specs/**/*chapNewwindown.ts',
         // './test/specs/**/*chap_11.ts',
         // './test/specs/**/*dialog.ts',
         // './test/specs/**/*chap_10.ts'
