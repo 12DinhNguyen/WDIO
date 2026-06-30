@@ -60,6 +60,7 @@ export const config: WebdriverIO.Config = {
     //
     capabilities: [{
         browserName: 'chrome',
+        browserVersion: '140',
     }],
 
     //
